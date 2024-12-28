@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toko Digital</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* General Body Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* Header Section */
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .header img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
+
+    .header .info {
+      flex: 1;
+    }
+
+    .header .info h1 {
+      margin: 0;
+      font-size: 1.5rem;
+      color: #333;
+    }
+
+    .header .info p {
+      margin: 5px 0;
+      color: #777;
+    }
+
+    /* Search Bar */
+    .search {
+      margin: 20px 0;
+      display: flex;
+    }
+
+    .search input {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    /* Product Grid */
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+    }
+
+    .product-card {
+      background-color: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-card img {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 10px;
+    }
+
+    .product-card h3 {
+      margin: 0;
+      font-size: 1rem;
+      color: #333;
+    }
+
+    .product-card p {
+      margin: 5px 0;
+      color: #777;
+    }
+
+    .product-card button {
+      background-color: #28a745;
+      color: #fff;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .product-card button:hover {
+      background-color: #218838;
+    }
+
+    /* Navigation Menu */
+    .nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #fff;
+      box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: #333;
+      font-size: 14px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .nav a .icon {
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+
+    .nav a:hover {
+      color: #007bff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <img src="https://pixhost.to/show/156/547715247_1002290191.jpg" alt="Store Logo">
+      <div class="info">
+        <h1>NemesisX-STORE</h1>
+        <p>ALL PRODUK</p>
+      </div>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="search">
+      <input id="search-bar" type="text" placeholder="Cari Produk di NemesisX-STORE" oninput="filterProducts()">
+    </div>
+
+    <!-- Product Grid -->
+    <div class="products" id="product-grid">
+      <div class="product-card">
+        <img src="https://ibb.co.com/8bMBcn8" alt="Web Suntik/Boost Sosmed">
+        <h3>Web Suntik/Boost Sosmed</h3>
+        <p>Rp1.000</p>
+        <form action="https://nemesisx-sosmed.my.id/">
+        <button type="submit">BELI</button>
+        </form>
+      </div>
+            <div class="product-card">
+        <img src="https://ibb.co.com/N9SCrPL" alt="NOMOR KOSONG">
+        <h3>NOKOS INDO NO GARANSI</h3>
+        <p>Rp6.000</p>
+        <form action="https://wa.me/6285158150415?text=Bang+Beli+Nokos+No+Garansi">
+        <button type="submit">BELI</button>
+        </form>
+      </div>
+      <div class="product-card">
+        <img src="https://ibb.co.com/N9SCrPL" alt="NOMOR KOSONG">
+        <h3>NOKOS INDO GARANSI 1×</h3>
+        <p>Rp8.000</p>
+        <form action="https://wa.me/6285158150415?text=Bang+Beli+Nokos+Garansi+1×'">
+        <button type="submit">BELI</button>
+        </form>
+      </div>
+            <div class="product-card">
+        <img src="https://ibb.co.com/xDRpB9C" alt="APK PREMIUM">
+        <h3>AM PREMIUM 1 TAHUN GARANSI 6BULAN</h3>
+        <p>Rp10.000</p>
+        <form action="https://wa.me/6285158150415?text=Bang+Beli+AM+1TAHUN'">
+        <button type="submit">BELI</button>
+        </form>
+      </div>
+            <div class="product-card">
+        <img src="https://ibb.co.com/Nnqvtrt" alt="BOT PUSH KONTAK">
+        <h3>BOT PUSH KONTAK 7 JAM</h3>
+        <p>Rp1.000</p>
+        <form action="https://wa.me/6285158150415?text=Bang+Beli+Bot+PushKontak+7+Jam">
+        <button type="submit">BELI</button>
+        </form>
+      </div>
+            <div class="product-card">
+        <img src="https://ibb.co.com/Nnqvtrt" alt="BOT PUSH KONTAK">
+        <h3>BOT PUSH KONTAK 1 HARI</h3>
+        <p>Rp2.000</p>
+        <form action="https://wa.me/6285158150415?Bang+Beli+Bot+PushKontak+1+Hari">
+        <button type="submit">BELI</button>
+        </form>
+      </div>
+            <div class="product-card">
+        <img src="https://ibb.co.com/Nnqvtrt" alt="BOT PUSH KONTAK">
+        <h3>BOT PUSHKONTAK 2 HARI</h3>
+        <p>Rp3.000</p>
+        <form action="https://wa.me/6285158150415?text=Bang+Beli+Bot+PushKontak+2+Hari">
+        <button type="submit">BELI</button>
+        </form>
+      </div>
+      <div class="product-card">
+        <img src="https://ibb.co.com/Nnqvtrt" alt="Panel Product">
+        <h3>Reseller Panel Public</h3>
+        <p>Rp5.000</p>
+        <form action="https://wa.me/6285158150415?text=Bang+Join+Reseller+Panel+Public">
+        <button type="submit">BELI</button>
+        </form>
+        </form>
+      </div>
+            <div class="product-card">
+        <img src="https://ibb.co.com/Nnqvtrt" alt="Panel Product">
+        <h3>Reseller PANEL PRIVAT</h3>
+        <p>Rp10.000</p>
+        <form action="https://wa.me/6285158150415?text=Bang+Join+Reseller+Panel+Privat">
+        <button type="submit">BELI</button>
+        </form>
+      </div>
+            <div class="product-card">
+        <img src="https://ibb.co.com/Nnqvtrt" alt="Panel Product">
+        <h3>RESELLER PANEL PRIVATE</h3>
+        <p>Rp10.000</p>
+        <form action="https://wa.me/6285158150415?text=Bang+Beli+Reseller+Panel+Private'">
+        <button type="submit">BELI</button>
+        </form>
+      </div>
+            <div class="product-card">
+        <img src="https://ibb.co.com/Nnqvtrt.png" alt="Panel Product">
+        <h3>RESELLER PANEL PUBLIC</h3>
+        <p>Rp5.000</p>
+        <form action="https://wa.me/6285158150415?text=Bang+Beli+Reseller+Panel+Public'">
+        <button type="submit">BELI</button>
+        </form>
+      </div>
+            <div class="product-card">
+        <img src="https://ibb.co.com/Nnqvtrt" alt="Panel Product">
+        <h3>RESELLER SUBDOMAIN</h3>
+        <p>Rp10.000</p>
+        <form action="https://wa.me/6285158150415?text=Bang+Beli+Reseller+Subdomain'">
+        <button type="submit">BELI</button>
+        </form>
+      </div>
+      <div class="product-card">
+        <h3>MURID NOKOS ALL NEGARA</h3>
+        <p>Rp5.000</p>
+        <form action="https://wa.me/6285158150415?text=Bang+Join+Murid+Nokos+All+Negara'">
+        <button type="submit">BELI</button>
+        </form>
+      </div>
+      <div class="product-card">
+        <h3>GRUP JB NemesisX STORE¹>
+        <p>CARI / JUAL AKUN</p>
+        <form action="https://chat.whatsapp.com/Eo5w092ocgS4LSr8rgZkHH">
+        <button type="submit">BELI</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
